@@ -31,7 +31,24 @@ public class Test1 {
 		ft.addPetal();
 		fl.add();
 		String result = ft.futuretelling(cl);
-		assertTrue(fl.luck.containsValue(result));
+		assertFalse(fl.luck.containsValue(result));
 	}
-
+	
+	@Test
+	public void tomorrowTest1() {
+		ft.addPetal();
+		fl.add();
+		ft.futuretelling(cl);
+		String result = ft.futuretelling(cl);
+		assertTrue(result.equals("I've already told you " + cl.getName() + " the future, come tomorrow!"));
+	}
+	
+	@Test
+	public void randomPetalTest1() {
+		ft.addPetal();
+		fl.add();
+		System.out.println(ft.s);
+		assertTrue(ft.fl.getPetal() > 0 && ft.fl.getPetal() < 11);
+	}
+	
 }
